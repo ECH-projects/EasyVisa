@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --color-primary: rgb(197, 17, 17);
+    --color-white-opac: rgba(255, 255, 255, 0.85);
+    --color-white-opac-lower: rgba(255, 255, 255, 0.3);
+    --color-text: #000;
+    --color-border: #eee;
+    --color-footer: rgb(16, 24, 47);
+  
+    // FONTS
+    --font-text: 'Roboto';
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
