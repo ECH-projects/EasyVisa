@@ -3,6 +3,7 @@
 
 <script>
 
+    import { base } from '$app/paths';
     import emblaCarouselSvelte from "embla-carousel-svelte";
     import './page.scss';
 
@@ -54,26 +55,26 @@
 
     <div class="header">
         <div class="wrapper">
-            <a href="/" class="logo">
+            <a href="{base}/" class="logo">
                 <h1>TOP</h1>
                 <h3>Education</h3>
             </a>
             <div class="menu">
                 <ul>
                     <li>
-                        <a href="/countries">Страны</a>
+                        <a href="{base}/countries">Страны</a>
                     </li>
                     <li>
-                        <a href="/universities">Университеты</a>
+                        <a href="{base}/universities">Университеты</a>
                     </li>
                     <li>
-                        <a href="/information">Новости</a>
+                        <a href="{base}/information">Новости</a>
                     </li>
                     <li>
-                        <a href="/scholarship">Стипендии</a>
+                        <a href="{base}/scholarship">Стипендии</a>
                     </li>
                     <li>
-                        <a href="/camp">Летняя школа</a>
+                        <a href="{base}/camp">Летняя школа</a>
                     </li>
                 </ul>
             </div>
@@ -87,13 +88,13 @@
             <div class="embla" use:emblaCarouselSvelte={carouselOptions} onemblaInit={onInitCarousel}>
                 <div class="embla__container">
                   <div class="embla__slide">
-                    <img src="/images/banner-1.jpg" alt="" srcset="">
+                    <img src="{base}/images/banner-1.jpg" alt="" srcset="">
                   </div>
                   <div class="embla__slide">
-                    <img src="/images/banner-2.jpg" alt="" srcset="">
+                    <img src="{base}/images/banner-2.jpg" alt="" srcset="">
                   </div>
                   <div class="embla__slide">
-                    <img src="/images/banner-3.jpg" alt="" srcset="">
+                    <img src="{base}/images/banner-3.jpg" alt="" srcset="">
                   </div>
                 </div>
     
@@ -122,10 +123,10 @@
             <div class="embla" use:emblaCarouselSvelte={carouselOptions} onemblaInit={onInitCarouselNews}>
                 <div class="embla__container">
                     <div class="embla__slide">
-                        <a href="/">
+                        <a href="{base}/">
                             <div class="flash"></div>
                             <div class="e-poster">
-                                <img src="/images/news/1.jpg" alt="">
+                                <img src="{base}/images/news/1.jpg" alt="">
                             </div>
                             <div class="e-info">
                                 <p>Some text here</p>
@@ -133,10 +134,10 @@
                         </a>
                     </div>
                     <div class="embla__slide">
-                        <a href="/">
+                        <a href="{base}/">
                             <div class="flash"></div>
                             <div class="e-poster">
-                                <img src="/images/news/1.jpg" alt="">
+                                <img src="{base}/images/news/1.jpg" alt="">
                             </div>
                             <div class="e-info">
                                 <p>Как обучаться в КНР со стипендией</p>
@@ -144,10 +145,10 @@
                         </a>
                     </div>
                     <div class="embla__slide">
-                        <a href="/">
+                        <a href="{base}/">
                             <div class="flash"></div>
                             <div class="e-poster">
-                                <img src="/images/news/1.jpg" alt="">
+                                <img src="{base}/images/news/1.jpg" alt="">
                             </div>
                             <div class="e-info">
                                 <p>Как обучаться в КНР со стипендией</p>
@@ -155,10 +156,10 @@
                         </a>
                     </div>
                     <div class="embla__slide">
-                        <a href="/">
+                        <a href="{base}/">
                             <div class="flash"></div>
                             <div class="e-poster">
-                                <img src="/images/news/1.jpg" alt="">
+                                <img src="{base}/images/news/1.jpg" alt="">
                             </div>
                             <div class="e-info">
                                 <p>Как обучаться в КНР со стипендией</p>
@@ -166,10 +167,10 @@
                         </a>
                     </div>
                     <div class="embla__slide">
-                        <a href="/">
+                        <a href="{base}/">
                             <div class="flash"></div>
                             <div class="e-poster">
-                                <img src="/images/news/1.jpg" alt="">
+                                <img src="{base}/images/news/1.jpg" alt="">
                             </div>
                             <div class="e-info">
                                 <p>Как обучаться в КНР со стипендией</p>
@@ -180,7 +181,7 @@
             </div>
         </div>
         <div class="cfooter">
-            <a href="/">Посмотреть все</a>
+            <a href="{base}/">Посмотреть все</a>
         </div>
     </div>
     
@@ -192,10 +193,10 @@
             <div class="embla" use:emblaCarouselSvelte={carouselOptions} onemblaInit={onInitCarouselNews}>
                 <div class="embla__container">
                     <div class="embla__slide">
-                        <a href="/">
+                        <a href="{base}/">
                             <div class="flash"></div>
                             <div class="e-poster">
-                                <img src="/images/countries/ireland/card.jpg" alt="">
+                                <img src="{base}/images/countries/ireland/card.jpg" alt="">
                             </div>
                             <div class="e-info">
                                 <h3>Ирланд</h3>
@@ -208,10 +209,10 @@
                         </a>
                     </div>
                     <div class="embla__slide">
-                        <a href="/">
+                        <a href="{base}/">
                             <div class="flash"></div>
                             <div class="e-poster">
-                                <img src="/images/countries/australia/card.jpg" alt="">
+                                <img src="{base}/images/countries/australia/card.jpg" alt="">
                             </div>
                             <div class="e-info">
                                 <h3>Австралия</h3>
@@ -224,10 +225,10 @@
                         </a>
                     </div>
                     <div class="embla__slide">
-                        <a href="/">
+                        <a href="{base}/">
                             <div class="flash"></div>
                             <div class="e-poster">
-                                <img src="/images/countries/canada/card.jpg" alt="">
+                                <img src="{base}/images/countries/canada/card.jpg" alt="">
                             </div>
                             <div class="e-info">
                                 <h3>Канада</h3>
@@ -240,10 +241,10 @@
                         </a>
                     </div>
                     <div class="embla__slide">
-                        <a href="/">
+                        <a href="{base}/">
                             <div class="flash"></div>
                             <div class="e-poster">
-                                <img src="/images/countries/great_britain/card.jpg" alt="">
+                                <img src="{base}/images/countries/great_britain/card.jpg" alt="">
                             </div>
                             <div class="e-info">
                                 <h3>Великий Британ</h3>
@@ -256,10 +257,10 @@
                         </a>
                     </div>
                     <div class="embla__slide">
-                        <a href="/">
+                        <a href="{base}/">
                             <div class="flash"></div>
                             <div class="e-poster">
-                                <img src="/images/countries/philippines/card.jpg" alt="">
+                                <img src="{base}/images/countries/philippines/card.jpg" alt="">
                             </div>
                             <div class="e-info">
                                 <h3>Филиппины</h3>
@@ -272,10 +273,10 @@
                         </a>
                     </div>
                     <div class="embla__slide">
-                        <a href="/">
+                        <a href="{base}/">
                             <div class="flash"></div>
                             <div class="e-poster">
-                                <img src="/images/countries/usa/card.jpg" alt="">
+                                <img src="{base}/images/countries/usa/card.jpg" alt="">
                             </div>
                             <div class="e-info">
                                 <h3>США</h3>
@@ -295,13 +296,13 @@
     <div class="footer">
         <div class="f-info">
             <div class="f-countries">
-                <a href="/">Австралия</a>
-                <a href="/">Канада</a>
-                <a href="/">Великий Британ</a>
-                <a href="/">Ирланд</a>
-                <a href="/">Филиппины</a>
-                <a href="/">Сингапур</a>
-                <a href="/">США</a>
+                <a href="{base}/">Австралия</a>
+                <a href="{base}/">Канада</a>
+                <a href="{base}/">Великий Британ</a>
+                <a href="{base}/">Ирланд</a>
+                <a href="{base}/">Филиппины</a>
+                <a href="{base}/">Сингапур</a>
+                <a href="{base}/">США</a>
             </div>
         </div>
         <div class="f-info">
@@ -328,19 +329,19 @@
                 </button>
             </li>
             <li>
-                <a href="/countries">Страны</a>
+                <a href="{base}/countries">Страны</a>
             </li>
             <li>
-                <a href="/universities">Университеты</a>
+                <a href="{base}/universities">Университеты</a>
             </li>
             <li>
-                <a href="/information">Новости</a>
+                <a href="{base}/information">Новости</a>
             </li>
             <li>
-                <a href="/scholarship">Стипендии</a>
+                <a href="{base}/scholarship">Стипендии</a>
             </li>
             <li>
-                <a href="/camp">Летняя школа</a>
+                <a href="{base}/camp">Летняя школа</a>
             </li>
         </ul>
     </div>
