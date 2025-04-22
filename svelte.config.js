@@ -1,6 +1,8 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
+const repoName = 'EasyVisa';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
@@ -11,10 +13,10 @@ const config = {
 			precompress: false,
 		}),
 		prerender: {
-			handleMissingId: 'warn',
+			handleHttpError: 'warn'
 		},
 		paths: {
-			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+			base: `/${repoName}`
 		},
 	},
 	preprocess: vitePreprocess(),
