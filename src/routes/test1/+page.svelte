@@ -99,27 +99,28 @@
             </div>
         </div>
         <div class="header-content">
-            <div class="hc-box">
+            <div class="hc-box txt-box">
                 <h1>Твоя Мечта Учиться за Границей Начинается Здесь</h1>
                 <p>Мы открываем двери в лучшие университеты мира и берём на себя весь путь — от поступления до визы</p>
                 <div class="hc-button">
-                    <button>Подробнее</button>
+                    <button onclick={() => alert()}>Подробнее</button>
                 </div>
             </div>
-            <div class="hc-box">
+            <div class="hc-box img-box">
                 <img src="{base}/images/01.png" alt="">
             </div>
         </div>
-        <div class="header-footer">
-            <div class="hf-track">
-                {#each Array(4) as _}
-                    {#each universities as uni, inx}
-                        <div class="hft-item">
-                            <img src="{base}/icons/{uni}.svg" alt="uni{inx}">
-                        </div>
-                    {/each}
+    </div>
+
+    <div class="marquee-container rev">
+        <div class="marquee-content">
+            {#each Array(4) as _}
+                {#each universities as uni, inx}
+                    <div class="marquee-item">
+                        <img src="{base}/icons/{uni}.svg" alt="uni{inx}">
+                    </div>
                 {/each}
-            </div>
+            {/each}
         </div>
     </div>
     
