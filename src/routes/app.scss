@@ -5,12 +5,16 @@
 
 
 :root {
-    --color-primary: #027e6f;
+    --color-primary: #119285;
     --color-white-opac: rgba(255, 255, 255, 0.85);
     --color-white-opac-lower: rgba(255, 255, 255, 0.3);
     --color-text: #000;
     --color-border: #eee;
     --color-footer: rgb(16, 24, 47);
+    --color-gray: #999999;
+
+    --color-grad-1: #28e6f2;
+    --color-grad-2: #ffffaa;
   
     // FONTS
     // --font-text: 'Roboto';
@@ -24,4 +28,5 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: var(--font-text);
 }

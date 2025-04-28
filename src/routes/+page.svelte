@@ -4,8 +4,16 @@
 <script>
 
     import { base } from '$app/paths';
-    import emblaCarouselSvelte from "embla-carousel-svelte";
     import './page.scss';
+    import emblaCarouselSvelte from 'embla-carousel-svelte';
+
+
+    const universities = [
+        ["uoow", "hus", "eth", "mit", "tsin", "pek", "hop", "ucl", "tok"],
+        ["pari", "fra", "psl", "hong", "mcg", ],
+        ["uoow", "hus", "eth", "mit", "tsin", "pek", "hop", "ucl", "tok"],
+    ];
+
 
     emblaCarouselSvelte.globalOptions = { loop: true };
 
@@ -13,7 +21,7 @@
     let emblaAPI;
     let emblaAPI_1;
     let emblaAPI_2;
-    
+
     const carouselOptions = {
         align: 'start',
     }
@@ -47,20 +55,30 @@
     function showSideMenu(left) {
         sideMenuLeft = left;
     }
+
 </script>
 
 
 <div class="container">
 
+    <div class="background-animation"></div>
 
     <div class="header">
-        <div class="wrapper">
-            <a href="{base}/" class="logo">
-                <h1>TOP</h1>
-                <h3>Education</h3>
-            </a>
-            <div class="menu">
+        <div class="header-menu">
+            <div class="header-box logo">
+                <img src="{base}/icons/logo.svg" alt="logo">
+                <h1>EasyVisa</h1>
+            </div>
+            <div class="header-box">
+                <div class="header-menu-button">
+                    <button type="button" aria-label="Open menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
                 <ul>
+                    <li>
+                        <a class="active" href="{base}/">Главная страница</a>
+                    </li>
                     <li>
                         <a href="{base}/countries">Страны</a>
                     </li>
@@ -76,112 +94,35 @@
                     <li>
                         <a href="{base}/camp">Летняя школа</a>
                     </li>
+                    <li>
+                        <a href="{base}/about">О нас</a>
+                    </li>
                 </ul>
             </div>
-            <div class="menu-small">
-                <button aria-label="Toggle menu" onclick={() => showSideMenu('0%')}>
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
         </div>
-        <div class="carousel">
-            <div class="embla" use:emblaCarouselSvelte={carouselOptions} onemblaInit={onInitCarousel}>
-                <div class="embla__container">
-                  <div class="embla__slide">
-                    <img src="{base}/images/banner-1.jpg" alt="" srcset="">
-                  </div>
-                  <div class="embla__slide">
-                    <img src="{base}/images/banner-2.jpg" alt="" srcset="">
-                  </div>
-                  <div class="embla__slide">
-                    <img src="{base}/images/banner-3.jpg" alt="" srcset="">
-                  </div>
+        <div class="header-content">
+            <div class="hc-box txt-box">
+                <h1>Твоя Мечта Учиться за Границей Начинается Здесь</h1>
+                <p>Мы открываем двери в лучшие университеты мира и берём на себя весь путь — от поступления до визы</p>
+                <div class="hc-button">
+                    <button onclick={() => alert()}>Подробнее</button>
                 </div>
-    
-                <div class="embla__control">
-                    <button type="button" id="btn-banner-prev" aria-label="Previous slide" onclick={scrollPrev}>
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-                    <button type="button" id="btn-banner-next" aria-label="Next slide" onclick={scrollNext}>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-    
-                <div class="embla__readmore">
-                    <button>Подробнее</button>
-                </div>
+            </div>
+            <div class="hc-box img-box">
+                <img src="{base}/images/01.png" alt="">
             </div>
         </div>
     </div>
-    
-    
-    <div class="content">
-        <div class="cheader">
-            <h1>НОВОСТИ</h1>
-        </div>
-        <div class="carousel">
-            <div class="embla" use:emblaCarouselSvelte={carouselOptions} onemblaInit={onInitCarouselNews}>
-                <div class="embla__container">
-                    <div class="embla__slide">
-                        <a href="{base}/">
-                            <div class="flash"></div>
-                            <div class="e-poster">
-                                <img src="{base}/images/news/1.jpg" alt="">
-                            </div>
-                            <div class="e-info">
-                                <p>Some text here</p>
-                            </div>
-                        </a>
+
+    <div class="marquee-container rev">
+        <div class="marquee-content right">
+            {#each Array(4) as _}
+                {#each universities[0] as uni, inx}
+                    <div class="marquee-item">
+                        <img src="{base}/icons/{uni}.svg" alt="uni{inx}">
                     </div>
-                    <div class="embla__slide">
-                        <a href="{base}/">
-                            <div class="flash"></div>
-                            <div class="e-poster">
-                                <img src="{base}/images/news/1.jpg" alt="">
-                            </div>
-                            <div class="e-info">
-                                <p>Как обучаться в КНР со стипендией</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="embla__slide">
-                        <a href="{base}/">
-                            <div class="flash"></div>
-                            <div class="e-poster">
-                                <img src="{base}/images/news/1.jpg" alt="">
-                            </div>
-                            <div class="e-info">
-                                <p>Как обучаться в КНР со стипендией</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="embla__slide">
-                        <a href="{base}/">
-                            <div class="flash"></div>
-                            <div class="e-poster">
-                                <img src="{base}/images/news/1.jpg" alt="">
-                            </div>
-                            <div class="e-info">
-                                <p>Как обучаться в КНР со стипендией</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="embla__slide">
-                        <a href="{base}/">
-                            <div class="flash"></div>
-                            <div class="e-poster">
-                                <img src="{base}/images/news/1.jpg" alt="">
-                            </div>
-                            <div class="e-info">
-                                <p>Как обучаться в КНР со стипендией</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="cfooter">
-            <a href="{base}/">Посмотреть все</a>
+                {/each}
+            {/each}
         </div>
     </div>
     
@@ -285,6 +226,167 @@
                                     elit, sed do eiusmod tempor incididunt ut labore 
                                     et dolore magna aliqua...
                                 </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            {#each Array(4) as _}
+                {#each universities[1] as uni, inx}
+                    <div class="marquee-item">
+                        <img src="{base}/icons/{uni}.svg" alt="uni{inx}">
+                    </div>
+                {/each}
+            {/each}
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="cheader">
+            <h1>УНИВЕРСИТЕТЫ</h1>
+        </div>
+        <div class="carousel">
+            <div class="embla" use:emblaCarouselSvelte={carouselOptions} onemblaInit={onInitCarouselNews}>
+                <div class="embla__container">
+                    <div class="embla__slide">
+                        <a href="{base}/">
+                            <div class="flash"></div>
+                            <div class="e-poster">
+                                <img src="{base}/images/universities/yale.jpg" alt="">
+                            </div>
+                            <div class="e-info">
+                                <p>Some text here</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="embla__slide">
+                        <a href="{base}/">
+                            <div class="flash"></div>
+                            <div class="e-poster">
+                                <img src="{base}/images/universities/mit.jpg" alt="">
+                            </div>
+                            <div class="e-info">
+                                <p>Как обучаться в КНР со стипендией</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="embla__slide">
+                        <a href="{base}/">
+                            <div class="flash"></div>
+                            <div class="e-poster">
+                                <img src="{base}/images/universities/yale.jpg" alt="">
+                            </div>
+                            <div class="e-info">
+                                <p>Как обучаться в КНР со стипендией</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="embla__slide">
+                        <a href="{base}/">
+                            <div class="flash"></div>
+                            <div class="e-poster">
+                                <img src="{base}/images/universities/mit.jpg" alt="">
+                            </div>
+                            <div class="e-info">
+                                <p>Как обучаться в КНР со стипендией</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="embla__slide">
+                        <a href="{base}/">
+                            <div class="flash"></div>
+                            <div class="e-poster">
+                                <img src="{base}/images/universities/yale.jpg" alt="">
+                            </div>
+                            <div class="e-info">
+                                <p>Как обучаться в КНР со стипендией</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cfooter">
+            <a href="{base}/">Посмотреть все</a>
+        </div>
+    </div>
+
+    <div class="marquee-container rev">
+        <div class="marquee-content right">
+            {#each Array(4) as _}
+                {#each universities[2] as uni, inx}
+                    <div class="marquee-item">
+                        <img src="{base}/icons/{uni}.svg" alt="uni{inx}">
+                    </div>
+                {/each}
+            {/each}
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="cheader">
+            <h1>ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h1>
+        </div>
+        <div class="carousel">
+            <div class="embla" use:emblaCarouselSvelte={carouselOptions} onemblaInit={onInitCarouselNews}>
+                <div class="embla__container">
+                    <div class="embla__slide">
+                        <a href="{base}/">
+                            <div class="flash"></div>
+                            <div class="e-poster">
+                                <img src="{base}/images/universities/yale.jpg" alt="">
+                            </div>
+                            <div class="e-info">
+                                <p>Some text here</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="embla__slide">
+                        <a href="{base}/">
+                            <div class="flash"></div>
+                            <div class="e-poster">
+                                <img src="{base}/images/universities/mit.jpg" alt="">
+                            </div>
+                            <div class="e-info">
+                                <p>Как обучаться в КНР со стипендией</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="embla__slide">
+                        <a href="{base}/">
+                            <div class="flash"></div>
+                            <div class="e-poster">
+                                <img src="{base}/images/universities/yale.jpg" alt="">
+                            </div>
+                            <div class="e-info">
+                                <p>Как обучаться в КНР со стипендией</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="embla__slide">
+                        <a href="{base}/">
+                            <div class="flash"></div>
+                            <div class="e-poster">
+                                <img src="{base}/images/universities/mit.jpg" alt="">
+                            </div>
+                            <div class="e-info">
+                                <p>Как обучаться в КНР со стипендией</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="embla__slide">
+                        <a href="{base}/">
+                            <div class="flash"></div>
+                            <div class="e-poster">
+                                <img src="{base}/images/universities/yale.jpg" alt="">
+                            </div>
+                            <div class="e-info">
+                                <p>Как обучаться в КНР со стипендией</p>
                             </div>
                         </a>
                     </div>
